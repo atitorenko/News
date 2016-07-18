@@ -17,7 +17,7 @@ public class NewsServiceImpl implements NewsService {
     private NewsRepository newsRepository;
 
     @Override
-    public List<News> findNews(Date start,Date end){
-        return newsRepository.findNewsByDate(start, end);
+    public List<News> findNews(Date fromDate, Date toDate){
+        return newsRepository.findNewsByDate(fromDate, toDate);
     }
 }

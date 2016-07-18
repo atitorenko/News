@@ -12,8 +12,8 @@ import java.util.List;
  * Created by aleksejtitorenko on 18.07.16.
  */
 public interface NewsRepository extends JpaRepository<News, Integer> {
-    @Query(value = "SELECT * FROM news WHERE (:start IS NULL OR date>=:start) AND (:end IS NULL OR date<=:end)",
+    @Query(value = "SELECT * FROM news WHERE (:fromDate IS NULL OR date>=:fromDate) AND (:toDate IS NULL OR date<=:toDate)",
             nativeQuery = true)
 
-    List<News> findNewsByDate(@Param("start") Date start, @Param("end") Date end);
+    List<News> findNewsByDate(@Param("fromDate") Date fromDate, @Param("toDate") Date toDate);
 }

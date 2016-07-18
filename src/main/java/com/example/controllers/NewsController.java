@@ -18,8 +18,8 @@ class NewsController {
     private NewsServiceImpl newsService;
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)
-    List<News> getNews(@RequestParam(name = "start", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date start,
-                       @RequestParam(name = "end", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date end) {
-        return newsService.findNews(start,end);
+    List<News> getNews(@RequestParam(name = "fromDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fromDate,
+                       @RequestParam(name = "toDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date toDate) {
+        return newsService.findNews(fromDate,toDate);
     }
 }

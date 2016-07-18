@@ -9,5 +9,5 @@ import java.util.List;
  * Created by aleksejtitorenko on 18.07.16.
  */
 public interface NewsService {
-    List<News> findNews(Date start, Date end);
+    List<News> findNews(Date fromDate, Date toDate);
 }
